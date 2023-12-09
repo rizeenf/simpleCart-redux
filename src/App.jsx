@@ -4,7 +4,7 @@ import Product from "./Components/Product";
 
 function App() {
   return (
-    <div className=" overflow-auto relative p-2 h-[100dvh] w-[100dvw] max-h-[100dvh] max-w-[100dvw] ">
+    <div className=" overflow-x-auto relative p-2 h-[100dvh] w-[100dvw] max-h-[100dvh] max-w-[100dvw] ">
       <Header />
       <Product />
     </div>

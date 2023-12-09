@@ -1,11 +1,11 @@
-import { ChefHat } from "lucide-react";
+import { ChefHat, Ticket } from "lucide-react";
 import React from "react";
 import CurrencyFormat from "react-currency-format";
 
 const Cart = ({ handleCart, isCartOpen }) => {
   return (
     <div
-      className={`fixed z-10 top-0 right-0 bg-cyan-50 transition-all duration-500  h-full 
+      className={`fixed z-10 overflow-auto top-0 right-0 bg-cyan-50 transition-all duration-500 h-full flex flex-col max-w-[100dvw]
     ${isCartOpen ? "w-[30rem]" : "w-[0]"}
     `}
     >
@@ -21,7 +21,7 @@ const Cart = ({ handleCart, isCartOpen }) => {
           x
         </span>
       </div>
-      <div className="items">
+      <div className="items flex-[4]">
         <div className="item m-5">
           <div className=" flex flex-row justify-between border-t">
             <img
@@ -38,7 +38,7 @@ const Cart = ({ handleCart, isCartOpen }) => {
                 thousandSeparator
                 prefix="Rp "
                 displayType={"text"}
-                className=" text-cyan-700 font-semibold text-"
+                className=" text-cyan-700 font-semibold "
               />
               <h6 className=" whitespace-nowrap text-xs font-light">
                 Fusce consequat. Nulla nisl. Nunc nisl
@@ -60,6 +60,35 @@ const Cart = ({ handleCart, isCartOpen }) => {
             placeholder="Masukkan catatan disini..."
           />
         </div>
+      </div>
+      <div className="voucher border-t mx-3 flex-[1]">
+        <div className="wrapper my-3">
+          <div className="content flex flex-row gap-2 items-center">
+            <Ticket size={20} />
+            <span className=" text-sm">Tambah voucher</span>
+          </div>
+          <input
+            type="text"
+            className="w-full text-xs p-2 mt-1"
+            placeholder="Masukkan vouchermu disini..."
+          />
+        </div>
+      </div>
+
+      <div className="total border-t mx-3 flex-[1]">
+        <div className="wrapper my-3 flex justify-between bg-gray-200 rounded p-2">
+          <span>Total</span>
+          <CurrencyFormat
+            value={52215}
+            thousandSeparator
+            prefix="Rp "
+            displayType={"text"}
+            className=" text-cyan-700 font-semibold "
+          />
+        </div>
+        <button className="p-2 w-full rounded bg-cyan-600 text-xs text-white">
+          Buat Pesanan
+        </button>
       </div>
     </div>
   );
