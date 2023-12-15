@@ -3,7 +3,7 @@ import { ShoppingCart, ChefHat } from "lucide-react";
 import Cart from "./Cart";
 
 const Header = () => {
-  const [isCartOpen, setIsCartOpen] = useState(true);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const handleCartOpen = () => {
     setIsCartOpen((prev) => !prev);
